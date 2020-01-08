@@ -6,9 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class SmokeTest {
     WebDriver driver;
 
+    public boolean isWindows= System.getProperty("os.name").toLowerCase().startsWith("windows");
+
     @BeforeEach
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        if(isWindows){
+            System.setProperty("webdriver.chrome.driver", "resources/win/chromedriver.exe");
+        }else{
+            System.setProperty("webdriver.chrome.driver", "resources/mac/chromedriver.exe");
+        }
+
         driver = new ChromeDriver();
         driver.get("https://amazon.com");
     }
@@ -26,5 +33,5 @@ public class SmokeTest {
 
     }
 
-    }
+
 }
