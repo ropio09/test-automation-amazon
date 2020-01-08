@@ -32,9 +32,4 @@ public class SmokeTest {
     public void terdown() {
 
     }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> bf1c98ed37a66535425a0db7c815cefbe2275693
 }
